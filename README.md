@@ -7,5 +7,5 @@ For Raspberry Pi 3 connect strips's D_IN to GPIO10(SPI0_MOSI).
 
 
 # License
-Creative Commons CC0, see COPYING.txt for details. Basically it means that this
+Creative Commons CC0, see LICENSE.txt for details. Basically it means that this
 project is in the public domain.
