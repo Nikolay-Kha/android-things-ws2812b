@@ -29,19 +29,23 @@ public class MainActivity extends AppCompatActivity {
 
         final Random rnd = new Random();
         strip = new WS2812B();
+        // generate random colors for some amount of LEDs.
         for(int i = 0; i < 300; i++) {
+            // using HSV palette to generate bright colors.
             strip.add(0, Color.valueOf(Color.HSVToColor(new float[]{
                     rnd.nextFloat() * 360.0f, 1.0f, 0.1f
             })));
         }
+        // run in loop
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
+                // take last color and move it to first position
                 strip.addFirst(strip.pollLast());
                 strip.commit();
             }
-        }, 0, 1000);
+        }, 500, 1000);
     }
 
     @Override
